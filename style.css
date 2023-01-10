@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --orange: hsl(25, 97%, 53%);
+  --white: hsl(0, 0%, 100%);
+  --light-gray: rgb(149, 158, 172);
+  --medium-gray: hsl(216, 12%, 54%);
+  --dark-blue: hsl(213, 19%, 18%);
+  --very-dark-blue: hsl(216, 12%, 8%);
+  --bg: rgba(149, 158, 172, 0.1);
+}
+
+body {
+  background-color: var(--very-dark-blue);
+  color: var(--light-gray);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-family: "Overpass", sans-serif;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.card {
+  background-color: var(--dark-blue);
+  width: 370px;
+  height: 370px;
+  padding: 1.8rem;
+  border-radius: 30px;
+  transition: all 0.3s ease-in;
+}
+
+h2 {
+  color: var(--white);
+  margin: 2rem 0 5px;
+  letter-spacing: 0.2px;
+}
+
+p {
+  margin-bottom: 1.8rem;
+}
+
+.front {
+  display: flex;
+  flex-direction: column;
+}
+
+.img-container,
+.rating-container span {
+  width: 45px;
+  height: 45px;
+  background-color: rgba(149, 158, 172, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.img-container img {
+  width: 14px;
+}
+
+.rating-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.7rem;
+}
+
+.rating-container span {
+  transition: all 0.3s ease-in;
+}
+
+.rating-container span:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #fff;
+}
+
+.rating-container span.selected {
+  color: #fff;
+  background-color: var(--orange);
+}
+
+button {
+  padding: 0.8rem;
+  font-weight: 600;
+  border-radius: 100px;
+  letter-spacing: 3px;
+  border: none;
+  background-color: var(--orange);
+  color: var(--white);
+  text-transform: uppercase;
+  transition: all 0.3s ease-in;
+}
+
+button:hover {
+  color: var(--orange);
+  background-color: var(--white);
+}
+
+.back {
+  display: none;
+}
+
+.card.show .front {
+  display: none;
+}
+
+.card.show .back {
+  display: block;
+  text-align: center;
+}
+
+.result-text {
+  color: var(--orange);
+  background-color: var(--bg);
+  display: inline-block;
+  padding: 8px 16px;
+  margin: 1rem 0;
+  border-radius: 100px;
+}
+.back h2 {
+  margin-top: 10px;
+}
